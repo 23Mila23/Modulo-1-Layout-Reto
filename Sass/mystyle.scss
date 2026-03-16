@@ -128,7 +128,12 @@ footer {
     }
    
   }
-  main .list {
+  main {
+    padding: 20px;
+& .list {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
+  }
+  
 }
