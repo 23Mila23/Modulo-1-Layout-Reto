@@ -1,93 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link type="text/css" rel="stylesheet" href="/Sass/mystyle.scss" />
-    <title>Layout Playground</title>
+    <title>Lemoncode</title>
+    <link type="text/css" rel="stylesheet" href="/sass/mystyle.scss" />
   </head>
   <body>
-    <div class="ejercicios-container">
-      <h1>Ejercicio 1</h1>
-      <div class="container-1">
-        <div class="box darken-4">
-          <span class="color-box-text">Darken 4</span>
-        </div>
-        <div class="box darken-3">
-          <span class="color-box-text">Darken 3</span>
-        </div>
-        <div class="box darken-2">
-          <span class="color-box-text">Darken 2</span>
-        </div>
-        <div class="box darken-1">
-          <span class="color-box-text">Darken 1</span>
-        </div>
-        <div class="box base-color">
-          <span class="color-box-text">Base color</span>
-        </div>
-        <div class="box lighten-1">
-          <span class="color-box-text">Lighten 1</span>
-        </div>
-        <div class="box lighten-2">
-          <span class="color-box-text">Lighten 2</span>
-        </div>
-        <div class="box lighten-3">
-          <span class="color-box-text">Lighten 3</span>
-        </div>
-        <div class="box lighten-4">
-          <span class="color-box-text">Lighten 4</span>
-        </div>
+    <header>
+      <div class="toolbar">
+        <input placeholder="Buscar" />
+        <div>Víctor Borrego Pérez</div>
       </div>
-      <!--------------------------------------->
-      <h1>Ejercicio 2</h1>
-      <div class="container-theme">
-        <div class="main container">
-          <span class="color-box-text">Base</span>
-        </div>
-        <div class="accent container">
-          <span class="color-box-text">Important</span>
-        </div>
-        <div class="warning container">
-          <span class="color-box-text">Warning</span>
-        </div>
-        <p class="main-font">Principal font</p>
-        <p class="secondary-font">Secondary font</p>
-        <div class="box-shadow">
-          <p>Box with shadow</p>
-        </div>
-      </div>
-      <!--------------------------------------->
-      <h1>Ejercicio 3</h1>
-      <div class="nav-container">
-        <div class="container">
-          <p>Home</p>
-        </div>
-        <div class="container">
-          <p>Blog</p>
-        </div>
-        <div class="container selected">
-          <p>Activities</p>
-        </div>
-        <div class="container">
-          <p>About me</p>
-        </div>
-      </div>
+      <div class="page-title">Welcome Lemoncoders!</div>
+    </header>
 
-      <h1>Ejercicio 4</h1>
-      <div class="card-container">
-        <div class="card">
-          <img src="/assets/img/card-img.jpg" alt="imagen card" />
-
-          <h3 class="card-title">Title</h3>
-
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan nisl ac risus tempus, ac sodales odio ultricies. Nulla fringilla arcu lacus, ac efficitur risus tincidunt euismod.
-          </p>
-
-          <button class="card-button">More info</button>
+    <div class="page-container">
+      <nav>
+        <div class="menu-container">
+          <div class="menu-title">Frameworks</div>
+          <ul>
+            <li>React</li>
+            <li>Svelte</li>
+            <li>Vue</li>
+            <li>Angular</li>
+          </ul>
         </div>
-      </div>
+      </nav>
+
+      <main>
+        <div class="list">
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/14540103?s=96&v=4"
+            />
+            <div class="member-name">Antonio Contreras</div>
+          </div>
+
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/1457912?s=96&v=4"
+            />
+            <div class="member-name">Braulio Díez</div>
+          </div>
+
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/13205689?s=96&v=4"
+            />
+            <div class="member-name">Santiago Camargo</div>
+          </div>
+
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/43171355?s=96&v=4"
+            />
+            <div class="member-name">Francisco Javier de Jesús Mazzoni</div>
+          </div>
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/24454225?s=96&v=4"
+            />
+            <div class="member-name">Javier Calzado</div>
+          </div>
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/7754966?s=96&v=4"
+            />
+            <div class="member-name">Jaime Salas</div>
+          </div>
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/26490961?s=96&v=4"
+              width="96"
+            />
+            <div class="member-name">Jose Manuel</div>
+          </div>
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/58438522?s=96&v=4"
+            />
+            <div class="member-name">Juan Pablo Martínez</div>
+          </div>
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/4374977?s=96&v=4"
+            />
+            <div class="member-name">Daniel Sánchez</div>
+          </div>
+          <div class="card item">
+            <img
+              src="https://avatars.githubusercontent.com/u/43609530?s=96&v=4"
+            />
+            <div class="member-name">Víctor Borrego</div>
+          </div>
+        </div>
+      </main>
     </div>
+
+    <footer>Master Lemoncode</footer>
   </body>
 </html>

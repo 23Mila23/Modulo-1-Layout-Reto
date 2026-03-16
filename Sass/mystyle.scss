@@ -1,9 +1,134 @@
-@use "sass:color";
 @import "base.scss";
-@import "ejercicio1.scss";
-@import "/Sass/ejercicio2.scss/main.scss";
-@import "ejercicio3.scss";
-@import "ejercicio4.scss";
+.page-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 100%;
+  flex: 1;
+}
 
+header {
+  display: flex;
+  flex-direction: column;
+  & .toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  & .page-title {
+    font-size: 32px;
+    background-color: skyblue;
+    color: white;
+    padding: 15px;
+  }
+}
+nav {
+  background-color: cornflowerblue;
+  border: 1px solid gray;
+  position: relative;
+  & .menu-container {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    width: 200px;
+    & .menu-title {
+      text-align: center;
+      font-weight: 800;
+      color: white;
+      font-size: 24px;
+      padding: 10px;
+    }
+    & ul {
+      display: flex;
+      flex-direction: column;
+      & li {
+        padding: 10px;
+        border-bottom: 1px solid gray;
+        cursor: pointer;
+        background-color: azure;
+      }
+    }
+  }
+}
+main {
+  background-color: aliceblue;
+  padding: 50px;
+  & .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    & .item:nth-child(9) {
+      grid-column: 2;
+    }
+    & .item:nth-child(10) {
+      grid-column: 3;
+    }
+    & .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      background-color: white;
+      border: 1px solid black;
+      & img {
+        border-radius: 50px;
+      }
+    }
+  }
+}
 
+footer {
+  background-color: skyblue;
+  padding: 15px;
+  color: white;
+}
 
+@media (max-width: 1199px) {
+  main .list {
+    grid-template-columns: repeat(2, 1fr);
+    & .item:nth-child(9) {
+      grid-column: auto;
+    }
+    & .item:nth-child(10) {
+      grid-column: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header .toolbar {
+    display: none;
+  }
+  .page-container {
+    grid-template-columns: 1fr;
+    nav{
+      position: sticky;
+      top: 0;
+       & .menu-container {
+      flex-direction: row;
+      width: 100%;
+      & .menu-title {
+        display: none;
+      }
+      & ul {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        gap: 10px;
+        padding: 10px;
+        li {
+          width: 100%;
+          background-color: azure;
+          text-align: center;
+        }
+      }
+    }
+    }
+   
+  }
+  main .list {
+    grid-template-columns: 1fr;
+  }
+}
