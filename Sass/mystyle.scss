@@ -1,139 +1,136 @@
 @import "base.scss";
-.page-container {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  height: 100%;
-  flex: 1;
-}
 
 header {
   display: flex;
-  flex-direction: column;
-  & .toolbar {
+  justify-content: space-between;
+  color: white;
+  top: 0;
+  position: sticky;
+  background-color: #141414;
+  & .header-logo,
+  .header-buttons {
     display: flex;
-    justify-content: space-between;
-    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
   }
-  & .page-title {
-    font-size: 32px;
-    background-color: skyblue;
-    color: white;
-    padding: 15px;
+
+  & .header-logo {
+    font-size: 21px;
   }
-}
-nav {
-  background-color: cornflowerblue;
-  border: 1px solid gray;
-  position: relative;
-  & .menu-container {
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 0;
-    width: 200px;
-    & .menu-title {
-      text-align: center;
-      font-weight: 800;
-      color: white;
-      font-size: 24px;
+  .header-buttons {
+    & div {
       padding: 10px;
-    }
-    & ul {
-      display: flex;
-      flex-direction: column;
-      & li {
-        padding: 10px;
-        border-bottom: 1px solid gray;
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        background-color: white;
+        color: black;
         cursor: pointer;
-        background-color: azure;
       }
     }
   }
 }
 main {
-  background-color: aliceblue;
-  padding: 50px;
-  & .list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    & .item:nth-child(9) {
-      grid-column: 2;
-    }
-    & .item:nth-child(10) {
-      grid-column: 3;
-    }
-    & .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 20px;
-      background-color: white;
-      border: 1px solid black;
-      & img {
-        border-radius: 50px;
-      }
-    }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  gap: 10px;
+  min-height: 0;
+  flex: 1;
+  & section {
+    flex: 1;
+    min-height: 0;
   }
-}
-
-footer {
-  background-color: skyblue;
-  padding: 15px;
-  color: white;
-}
-
-@media (max-width: 1199px) {
-  main .list {
-    grid-template-columns: repeat(2, 1fr);
-    & .item:nth-child(9) {
-      grid-column: auto;
-    }
-    & .item:nth-child(10) {
-      grid-column: auto;
-    }
+  .section-title{
+    margin: 15px 0px;
   }
-}
-
-@media (max-width: 768px) {
-  header .toolbar {
+  & #top-text-mobile {
     display: none;
   }
-  .page-container {
-    grid-template-columns: 1fr;
-    nav{
-      position: sticky;
-      top: 0;
-       & .menu-container {
-      flex-direction: row;
+  & .top {
+    display: flex;
+    flex-direction: row-reverse;
+    min-width: 225px;
+  }
+  & .first,
+  .second {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    overflow: hidden;
+    & .item {
+      transition: all 0.3s ease;
       width: 100%;
-      & .menu-title {
-        display: none;
-      }
-      & ul {
-        flex-direction: row;
-        justify-content: space-around;
+      & img {
         width: 100%;
-        gap: 10px;
-        padding: 10px;
-        li {
-          width: 100%;
-          background-color: azure;
-          text-align: center;
-        }
       }
     }
+    & .item:hover {
+      transform: scale(1.1);
+      z-index: 2;
+      cursor: pointer;
     }
-   
+  }
+}
+footer{
+  padding: 20px;
+}
+
+@media (max-width: 1280px) {
+  header {
+    .platform-title {
+      display: none;
+    }
+    
   }
   main {
-    padding: 20px;
-& .list {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    & #top-text-mobile {
+      display: inline;
+    }
+    & #top-text {
+      display: none;
+    }
+    & .top {
+      & .top-item{
+        width: 100%;
+      }
+      & .top-item:nth-child(1),
+      & .top-item:nth-child(2) {
+        display: none;
+      }
+    }
+    & .first,
+    .second {
+      gap: 10px;
+      & .item {
+        grid-column: span 2;
+      }
+    }
   }
+}
+@media (max-width: 992px) {
+  main {
+    
+    & .first,
+    .second {
+      & .item {
+        grid-column: span 3;
+      }
+    }
   }
-  
+}
+@media (max-width: 480px) {
+  main {
+    & .top{
+      flex-direction: column-reverse;
+    }
+    & .first,
+    .second {
+      & .item {
+        grid-column: span 6;
+      }
+    }
+  }
 }
